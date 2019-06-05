@@ -480,7 +480,6 @@ public class Construtores {
 		
 		sc.close();
 		
-		
 
 	}
 
