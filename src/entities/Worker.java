@@ -14,7 +14,8 @@ public class Worker {
 	
 	private Department department;
 	
-	//Duas observações com relação a lista  
+	//Duas observações com relação a lista:
+	//Deve ser instanciada e não pode ser inicializada no construtor
 	private List<HourContract> contracts = new ArrayList<>();
 	
 	public Worker() {
@@ -28,6 +29,7 @@ public class Worker {
 	}
 
 	public String getName() {
+		
 		return name;
 	}
 
