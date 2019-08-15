@@ -2,6 +2,7 @@ package entities;
 
 //Conta Poupança
 public class SavingsAccountHeranca extends AccountHeranca {
+//public final class SavingsAccountHeranca extends AccountHeranca {
 	
 	//Taixa de Juros
 	private Double interestRate;
@@ -26,6 +27,14 @@ public class SavingsAccountHeranca extends AccountHeranca {
 	
 	public void updateBalance() {
 		balance += balance * interestRate;
+	}
+	
+	@Override
+	//public void withdraw(double amount) {
+	
+	//Aqui o método não poderá ser sobreposto 
+	public final void withdraw(double amount) {
+		balance -= amount;
 	}
 
 }
