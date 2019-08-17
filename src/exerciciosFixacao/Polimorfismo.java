@@ -25,6 +25,7 @@ public class Polimorfismo {
 		System.out.print("Enter the number of products: ");
 		int n = sc.nextInt();
 		
+		//Percorrendo a lista de produtos
 		for (int i=1; i<=n; i++) {
 			System.out.println("Product #" + i + " data:");
 			System.out.print("Common, used or imported (c/u/i)? ");
