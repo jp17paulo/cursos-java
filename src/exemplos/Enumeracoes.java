@@ -41,6 +41,8 @@ public class Enumeracoes {
 		String workerLevel = sc.nextLine();
 		System.out.print("Base salary: ");
 		double baseSalary = sc.nextDouble();
+		
+		//Aqui estou instanciando um trabalhador 
 		Worker worker = new Worker(workerName, WorkerLevel.valueOf(workerLevel), baseSalary, new Department(departmentName));
 		
 		System.out.print("How many contracts to this worker? ");
