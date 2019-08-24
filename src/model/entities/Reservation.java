@@ -16,7 +16,12 @@ public class Reservation {
 	
 	private static SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy");
 	
+	//Minha classe DomainException herdando da classe Exception
+	//public Reservation(Integer roomNumber, Date checkIn, Date checkOut) throws DomainException {
+	
+	//Minha classe DomainException herdando da classe RuntimeException
 	public Reservation(Integer roomNumber, Date checkIn, Date checkOut) {
+	
 		if (!checkOut.after(checkIn)) {
 			throw new DomainException("Check-out date must be after check-in date");
 		}
@@ -46,13 +51,30 @@ public class Reservation {
 		return TimeUnit.DAYS.convert(diff, TimeUnit.MILLISECONDS);
 	}
 	
-	public String updateDates(Date checkIn, Date checkOut) {
+	//Minha classe DomainException herdando da classe Exception
+	//public String updateDates(Date checkIn, Date checkOut) throws DomainException {
+	
+	//Minha classe DomainException herdando da classe RuntimeException
+	public String updateDates(Date checkIn, Date checkOut){
 		Date now = new Date();
 		if (checkIn.before(now) || checkOut.before(now)) {
-			return "Reservation dates for update must be future dates";
+			
+			//Lançando uma string
+			//return "Reservation dates for update must be future dates";
+			
+			//Lançando uma exceção
+			//throw new IllegalArgumentException("Reservation dates for update must be future dates");
+			
+			throw new DomainException("Reservation dates for update must be future dates");
+			
 		}
 		if (!checkOut.after(checkIn)) {
-			return "Check-out date must be after check-in date";
+			
+			//return "Check-out date must be after check-in date";
+			
+			//throw new IllegalArgumentException("Check-out date must be after check-in date");
+			
+			throw new DomainException("Check-out date must be after check-in date");
 		}
 		this.checkIn = checkIn;
 		this.checkOut = checkOut;

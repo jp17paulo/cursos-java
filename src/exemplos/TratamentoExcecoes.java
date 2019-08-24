@@ -10,8 +10,10 @@ import model.exceptions.DomainException;
 
 public class TratamentoExcecoes {
     
-	//public static void main(String[] args) {
-	public static void main(String[] args) throws ParseException {
+	public static void main(String[] args) {
+	
+	//Usado nas soluções ruim e muito ruim
+	//public static void main(String[] args) throws ParseException {
 		// TODO Auto-generated method stub
 		
 		/*
@@ -196,7 +198,7 @@ public class TratamentoExcecoes {
 /******************************Solução  ruim: Tratando exceções*****************/
 /*****************************************************************************/
 		
-		Scanner sc = new Scanner(System.in);
+		/*Scanner sc = new Scanner(System.in);
 		SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy");
 		
 		System.out.print("Room number: ");
@@ -225,7 +227,7 @@ public class TratamentoExcecoes {
 			checkOut = sdf.parse(sc.next());
 			
 			
-				
+			//Essa string será eliminada na solução boa	
 			String error =	reservation.updateDates(checkIn, checkOut);
 			if (error != null) {
 				
@@ -243,7 +245,7 @@ public class TratamentoExcecoes {
 			
 			
 			
-		}
+		}*/
         	
         	
         
@@ -254,7 +256,7 @@ public class TratamentoExcecoes {
 /*****************************************************************************/		
 /******************************Solução boa: Tratando exceções*****************/
 /*****************************************************************************/
-		/*Scanner sc = new Scanner(System.in);
+		Scanner sc = new Scanner(System.in);
 		SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy");
 		
 		try {
@@ -263,9 +265,11 @@ public class TratamentoExcecoes {
 			int number = sc.nextInt();
 			
 			System.out.print("Check-in date (dd/MM/yyyy): ");
+			//ParseException
 			Date checkIn = sdf.parse(sc.next());
 			
 			System.out.print("Check-out date (dd/MM/yyyy): ");
+			//ParseException
 			Date checkOut = sdf.parse(sc.next());
 			
 			Reservation reservation = new Reservation(number, checkIn, checkOut);
@@ -276,14 +280,17 @@ public class TratamentoExcecoes {
 			System.out.println("Enter data to update the reservation:");
 			
 			System.out.print("Check-in date (dd/MM/yyyy): ");
+			//ParseException
 			checkIn = sdf.parse(sc.next());
 			
 			System.out.print("Check-out date (dd/MM/yyyy): ");
+			//ParseException
 			checkOut = sdf.parse(sc.next());
 			
 			reservation.updateDates(checkIn, checkOut);
 			System.out.println("Reservation: " + reservation);
 		}
+		
 		
 		catch (ParseException e) {
 			
@@ -295,11 +302,12 @@ public class TratamentoExcecoes {
 			System.out.println("Error in reservation: " + e.getMessage());
 		}
 		
+		//Qualquer outra exceção que não foi tratada
 		catch (RuntimeException e) {
 			
 			System.out.println("Unexpected error");
 		}
-        */
+        
 		sc.close();
 	
 }
