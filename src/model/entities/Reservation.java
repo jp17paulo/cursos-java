@@ -76,6 +76,7 @@ public class Reservation {
 			
 			throw new DomainException("Check-out date must be after check-in date");
 		}
+		
 		this.checkIn = checkIn;
 		this.checkOut = checkOut;
 		
